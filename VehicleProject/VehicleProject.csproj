@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SqlScripts\0001-CreateVehicleMaketable.sql" />
+    <None Remove="SqlScripts\0002-CreateVehicleModeltable.sql" />
+    <None Remove="SqlScripts\0003-AlterTableVehicleMakeAndModel.sql" />
+    <None Remove="SqlScripts\0004-SeedDataInTables.sql" />
+    <None Remove="SqlScripts\0005-SeedDataInTable2.sql" />
+    <None Remove="SqlScripts\0006-DropVehicleModelTable.sql" />
+    <None Remove="SqlScripts\0007-CreateNewVehicleModelTable.sql" />
+    <None Remove="SqlScripts\0008-CreatedOwnerTable.sql" />
+    <None Remove="SqlScripts\0009-SeedingOwnerData.sql" />
+    <None Remove="SqlScripts\0010-CreateVehicleModelOwnerTable.sql" />
+    <None Remove="SqlScripts\0011-AlterTableVehicleModelOwner.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SqlScripts\0001-CreateVehicleMaketable.sql" />
+    <EmbeddedResource Include="SqlScripts\0002-CreateVehicleModeltable.sql" />
+    <EmbeddedResource Include="SqlScripts\0003-AlterTableVehicleMakeAndModel.sql" />
+    <EmbeddedResource Include="SqlScripts\0004-SeedDataInTables.sql" />
+    <EmbeddedResource Include="SqlScripts\0005-SeedDataInTable2.sql" />
+    <EmbeddedResource Include="SqlScripts\0006-DropVehicleModelTable.sql" />
+    <EmbeddedResource Include="SqlScripts\0007-CreateNewVehicleModelTable.sql" />
+    <EmbeddedResource Include="SqlScripts\0008-CreatedOwnerTable.sql" />
+    <EmbeddedResource Include="SqlScripts\0009-SeedingOwnerData.sql" />
+    <EmbeddedResource Include="SqlScripts\0010-CreateVehicleModelOwnerTable.sql" />
+    <EmbeddedResource Include="SqlScripts\0011-AlterTableVehicleModelOwner.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-postgresql" Version="5.0.40" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BCL\Models\" />
+  </ItemGroup>
+
+</Project>

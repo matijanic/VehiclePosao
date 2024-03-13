@@ -53,7 +53,7 @@ namespace VehicleProject.Repository
            
         }
 
-        public async Task AddVehicleMake(VehicleMake newVehicleMake)
+        public async Task<bool> AddVehicleMake(VehicleMake newVehicleMake)
         {
             using (var connection = new NpgsqlConnection(Constants.connectionString))
             {
@@ -67,7 +67,8 @@ namespace VehicleProject.Repository
                     command.Parameters.AddWithValue("@DateUpdated", newVehicleMake.DateUpdated);
                     
 
-                    await command.ExecuteNonQueryAsync();
+                    var result = await command.ExecuteNonQueryAsync();
+                    return result > 0;
                 }
             }
         }

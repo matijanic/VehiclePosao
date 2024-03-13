@@ -36,6 +36,7 @@ var _vehicleMakeService = new VehicleMakeService();
 var _vehicleModelService = new VehicleModelService();
 var _ownerService = new OwnerService();
 var _modelOwnerService = new ModelOwnerService();
+var _sayHello = new ClassHello();
 int enter;
 
 
@@ -62,6 +63,8 @@ Console.WriteLine("-------------------");
 Console.WriteLine("14. Get all owners");
 Console.WriteLine("15. Add new owner");
 Console.WriteLine("16. Add Owner/Add Model");
+Console.WriteLine("17. Sey Hello");
+
 
 
 
@@ -113,6 +116,8 @@ do
         case 15: await _ownerService.AddNewOwner();
             break;
         case 16: await _modelOwnerService.AddNewModelForOwner();
+            break;
+        case 17: _sayHello.SayHello();
             break;
 
         case 0:

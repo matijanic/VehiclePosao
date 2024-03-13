@@ -73,7 +73,7 @@ namespace VehicleProject.Repository
             }
         }
 
-        public async Task DeleteVehicleMake(int vehicleId)
+        public async Task<bool> DeleteVehicleMake(int vehicleId)
         {
             using (var connection = new NpgsqlConnection(Constants.connectionString))
             {
@@ -81,7 +81,8 @@ namespace VehicleProject.Repository
                 using (var command = new NpgsqlCommand("delete from \"VehicleMake\" where \"VehicleMake_id\" = @vehicleId", connection))
                 {
                     command.Parameters.AddWithValue("@vehicleId", vehicleId);
-                    await command.ExecuteNonQueryAsync();
+                    var result = await command.ExecuteNonQueryAsync();
+                    return result > 0;
 
                 }
             }

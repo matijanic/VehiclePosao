@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Npgsql.Logging;
 using VehicleProject.Models;
 using VehicleProject.Repository;
+using VehicleProject.Validation;
 
 namespace VehicleProject.Services
 {
@@ -48,12 +50,43 @@ namespace VehicleProject.Services
             await _vehicleModelRepository.DeleteVehicleModel(inputModelId);
 
         }
+
+
+        public async Task GetVehicleModelsByOwner()
+        {
+            Console.WriteLine("Enter owner FirstName");
+            string firstName = Console.ReadLine().Trim();
+
+            firstName = StringValidate.CheckStringName(firstName);
+
+            Console.WriteLine("Enter owner LastName");
+            string lastName = Console.ReadLine().Trim();  
+
+            lastName = StringValidate.CheckStringName(lastName);    
+
+            var newList = await _vehicleModelRepository.GetAllOwnerModels(firstName, lastName);
+
+            if (!newList.Any())
+            {
+                Console.WriteLine("Not found");
+                return;
+            }
+            Console.WriteLine("All models by: {0} {1}",  firstName,lastName);
+            Console.WriteLine("-----------------");
+            foreach(var model in newList)
+            {
+                Console.WriteLine("Model Name: " + model.Name + " Abrv: " + model.Abrv + " Date Created: " + model.DateCreated + " Date Uddated: " + model.DateUpdated);
+                
+            }
+
+
+        }
         
 
         public async Task SearchVehicleModels()
         {
             Console.WriteLine("Enter Name or Abrv for search");
-            string searchPara = Console.ReadLine();
+            string searchPara = Console.ReadLine().Trim();
 
             var searchExistingModel = await _vehicleModelRepository.SearcVehicleModels(searchPara);
 
@@ -81,8 +114,12 @@ namespace VehicleProject.Services
 
             Console.Write("Name: ");
             string nameModel = Console.ReadLine();
+            nameModel = StringValidate.CheckStringName(nameModel);
+
             Console.Write("Abrv: ");
             string abrvModel = Console.ReadLine();
+            abrvModel = StringValidate.CheckStringName(abrvModel);
+
 
             if (string.IsNullOrWhiteSpace(abrvModel))
             {
@@ -129,10 +166,14 @@ namespace VehicleProject.Services
             }
 
             Console.WriteLine("Enter new name: ");
-            string modelName = Console.ReadLine();
+            string modelName = Console.ReadLine().Trim();
+
+            modelName = StringValidate.CheckStringName(modelName);
 
             Console.WriteLine("Enter new abrv: ");
-            string modelAbrv = Console.ReadLine();
+            string modelAbrv = Console.ReadLine().Trim();
+
+            modelAbrv = StringValidate.CheckStringName(modelAbrv); 
 
             Console.WriteLine("Enter new Make Id");
             int newMakeId;

@@ -44,10 +44,48 @@ namespace VehicleProject.Repository
                     }
                 }
 
-
                 return vehicleModels;
 
             }
+        }
+
+        public async Task<List<VehicleModel>> GetAllOwnerModels(string firstName, string lastName)
+        {
+            var modelList = new List<VehicleModel>();
+
+            using (var connection = new NpgsqlConnection(Constants.connectionString))
+            {
+                await connection.OpenAsync();
+                using (var command = new NpgsqlCommand("select vm.* \r\nfrom \"Owner\" \r\njoin \"VehicleModelOwner\" vmo on \"Owner\".\"Owner_id\" = vmo.\"Owner_id\" \r\njoin \"VehicleModel\" " +
+                    "vm on vmo.\"VehicleModel_id\" = vm.\"VehicleModel_id\" \r\nwhere \"Owner\".\"FirstName\"=@firstName and \"Owner\".\"LastName\" =@lastName",connection))
+                {
+                    command.Parameters.AddWithValue("@firstName", firstName);
+                    command.Parameters.AddWithValue("@lastName", lastName);
+
+                    using (var reader = await command.ExecuteReaderAsync())
+                    {
+                       while(await reader.ReadAsync())
+                        {
+                            var vehicleModel = new VehicleModel()
+                            {
+                                Name = reader.GetString(reader.GetOrdinal("Name")),
+                                Abrv = reader.GetString(reader.GetOrdinal("Abrv")),
+                                MakeId = reader.GetInt32(reader.GetOrdinal("VehicleMake_id")),
+                                DateCreated = reader.GetDateTime(reader.GetOrdinal("DateCreated")),
+                                DateUpdated = reader.GetDateTime(reader.GetOrdinal("DateUpdated")),
+                            };
+
+                            modelList.Add(vehicleModel);
+                        }
+                    }
+
+                 
+                }
+                return modelList;
+
+            }
+
+           
         }
 
         public async Task<List<VehicleModel>> SearcVehicleModels(string stringParams)

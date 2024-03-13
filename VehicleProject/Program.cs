@@ -34,7 +34,8 @@ if (upgrader.IsUpgradeRequired())
 
 var _vehicleMakeService = new VehicleMakeService();
 var _vehicleModelService = new VehicleModelService();
-
+var _ownerService = new OwnerService();
+var _modelOwnerService = new ModelOwnerService();
 int enter;
 
 
@@ -56,6 +57,15 @@ Console.WriteLine("9. Delete Vehicle Model");
 Console.WriteLine("10. Update Vehicle Model");
 Console.WriteLine("11. Get Vehicle Model by Id");
 Console.WriteLine("12. Search Vehicle Model");
+Console.WriteLine("13. List All Models By Owner");
+Console.WriteLine("-------------------");
+Console.WriteLine("14. Get all owners");
+Console.WriteLine("15. Add new owner");
+Console.WriteLine("16. Add Owner/Add Model");
+
+
+
+
 
 Console.WriteLine("0. End");
 do
@@ -95,6 +105,14 @@ do
             break;
 
         case 12: await _vehicleModelService.SearchVehicleModels();
+            break;
+        case 13: await _vehicleModelService.GetVehicleModelsByOwner();
+            break;
+        case 14: await _ownerService.GetAllOwner();
+            break;
+        case 15: await _ownerService.AddNewOwner();
+            break;
+        case 16: await _modelOwnerService.AddNewModelForOwner();
             break;
 
         case 0:

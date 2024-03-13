@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matijanic\\source\\repos\\VehicleProject\\VehicleProject\\VehicleProject.csproj": {}
+    "C:\\Project\\VehiclePosao\\VehicleProject\\VehicleProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matijanic\\source\\repos\\VehicleProject\\VehicleProject\\VehicleProject.csproj": {
+    "C:\\Project\\VehiclePosao\\VehicleProject\\VehicleProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matijanic\\source\\repos\\VehicleProject\\VehicleProject\\VehicleProject.csproj",
+        "projectUniqueName": "C:\\Project\\VehiclePosao\\VehicleProject\\VehicleProject.csproj",
         "projectName": "VehicleProject",
-        "projectPath": "C:\\Users\\Matijanic\\source\\repos\\VehicleProject\\VehicleProject\\VehicleProject.csproj",
-        "packagesPath": "C:\\Users\\Matijanic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matijanic\\source\\repos\\VehicleProject\\VehicleProject\\obj\\",
+        "projectPath": "C:\\Project\\VehiclePosao\\VehicleProject\\VehicleProject.csproj",
+        "packagesPath": "C:\\Users\\optimasoft\\.nuget\\packages\\",
+        "outputPath": "C:\\Project\\VehiclePosao\\VehicleProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matijanic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\optimasoft\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -61,7 +66,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

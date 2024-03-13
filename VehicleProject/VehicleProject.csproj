@@ -19,6 +19,9 @@
     <None Remove="SqlScripts\0009-SeedingOwnerData.sql" />
     <None Remove="SqlScripts\0010-CreateVehicleModelOwnerTable.sql" />
     <None Remove="SqlScripts\0011-AlterTableVehicleModelOwner.sql" />
+    <None Remove="SqlScripts\0012-SeedingVehicleOwnerTable.sql" />
+    <None Remove="SqlScripts\0013-AddConstraintVehicleModel.sql" />
+    <None Remove="SqlScripts\0014-AddConstraintVehicleModelOwner.sql" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +36,9 @@
     <EmbeddedResource Include="SqlScripts\0009-SeedingOwnerData.sql" />
     <EmbeddedResource Include="SqlScripts\0010-CreateVehicleModelOwnerTable.sql" />
     <EmbeddedResource Include="SqlScripts\0011-AlterTableVehicleModelOwner.sql" />
+    <EmbeddedResource Include="SqlScripts\0012-SeedingVehicleOwnerTable.sql" />
+    <EmbeddedResource Include="SqlScripts\0013-AddConstraintVehicleModel.sql" />
+    <EmbeddedResource Include="SqlScripts\0014-AddConstraintVehicleModelOwner.sql" />
   </ItemGroup>
 
   <ItemGroup>

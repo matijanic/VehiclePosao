@@ -2,6 +2,7 @@
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -35,6 +36,7 @@ namespace VehicleProject.Repository
                                 Id = reader.GetInt32(reader.GetOrdinal("VehicleMake_id")),
                                 Name = reader.GetString(reader.GetOrdinal("Name")),
                                 Abrv = reader.GetString(reader.GetOrdinal("Abrv")),
+                                
                                 DateCreated = reader.GetDateTime(reader.GetOrdinal("DateCreated")),
                                 DateUpdated = reader.GetDateTime(reader.GetOrdinal("DateUpdated"))
                             };

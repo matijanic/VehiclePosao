@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VehicleProject.Models;
 using VehicleProject.Repository;
+using VehicleProject.Validation;
 
 namespace VehicleProject.Services
 {
@@ -109,16 +110,23 @@ namespace VehicleProject.Services
             Console.WriteLine("-------------------");
 
             Console.Write("Name : ");
-            string nameMake = Console.ReadLine();
+            string nameMake = Console.ReadLine().Trim();
+
+            nameMake = StringValidate.CheckStringName(nameMake);
+
 
             Console.Write("Abrv : ");
-            string adrvmake = Console.ReadLine();
+            string adrvmake = Console.ReadLine().Trim();
+
+            
 
             if (string.IsNullOrWhiteSpace(adrvmake))
             {
                 adrvmake = nameMake.Substring(0, 3).ToLower();
+                
             }
 
+            adrvmake= StringValidate.CheckStringName(adrvmake);
             
 
             var newCar = new VehicleMake
@@ -157,10 +165,21 @@ namespace VehicleProject.Services
             }
 
             Console.WriteLine("Enter new Name");
-            string newName = Console.ReadLine();
+            string newName = Console.ReadLine().Trim();
+
+            newName = StringValidate.CheckStringName(newName);
+
+
 
             Console.WriteLine("Enter new abrv");
             string newAbrv = Console.ReadLine();
+
+            if(string.IsNullOrWhiteSpace(newAbrv))
+            {
+                newAbrv = newName.Substring(0, 3);
+            }
+
+            newAbrv = StringValidate.CheckStringName(newAbrv);
 
             var updatedVehicleMake = new VehicleMake
             {

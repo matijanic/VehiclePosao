@@ -97,7 +97,6 @@ do
             break;
         case 7: await _vehicleModelService.ListAllVehicleModels();
             return;
-        
         case 8:  await _vehicleModelService.AddNewVehicleModel();
             break;
         case 9: await _vehicleModelService.DeleteVehicleModel();

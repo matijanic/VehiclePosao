@@ -37,3 +37,4 @@ C:\Project\VehiclePosao\VehicleProject\obj\Debug\net7.0\refint\VehicleProject.dl
 C:\Project\VehiclePosao\VehicleProject\obj\Debug\net7.0\VehicleProject.pdb
 C:\Project\VehiclePosao\VehicleProject\obj\Debug\net7.0\VehicleProject.genruntimeconfig.cache
 C:\Project\VehiclePosao\VehicleProject\obj\Debug\net7.0\ref\VehicleProject.dll
+C:\Project\VehiclePosao\VehicleProject\bin\Debug\net7.0\Dapper.dll

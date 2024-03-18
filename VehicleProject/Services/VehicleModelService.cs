@@ -118,13 +118,16 @@ namespace VehicleProject.Services
 
             Console.Write("Abrv: ");
             string abrvModel = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(abrvModel))
+            {
+                abrvModel = nameModel.Substring(0, 3).ToLower();
+            }
+
+
             abrvModel = StringValidate.CheckStringName(abrvModel);
 
 
-            if (string.IsNullOrWhiteSpace(abrvModel))
-            {
-                abrvModel = nameModel.Substring(0,3).ToLower();
-            }
+           
 
             Console.Write("Enter Make Id:");
             int makeId;

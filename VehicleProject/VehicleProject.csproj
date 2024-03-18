@@ -9,8 +9,6 @@
 
   <ItemGroup>
     <None Remove="SqlScripts\0001-CreateVehicleMaketable.sql" />
-    <None Remove="SqlScripts\0002-CreateVehicleModeltable.sql" />
-    <None Remove="SqlScripts\0003-AlterTableVehicleMakeAndModel.sql" />
     <None Remove="SqlScripts\0004-SeedDataInTables.sql" />
     <None Remove="SqlScripts\0005-SeedDataInTable2.sql" />
     <None Remove="SqlScripts\0006-DropVehicleModelTable.sql" />
@@ -26,8 +24,6 @@
 
   <ItemGroup>
     <EmbeddedResource Include="SqlScripts\0001-CreateVehicleMaketable.sql" />
-    <EmbeddedResource Include="SqlScripts\0002-CreateVehicleModeltable.sql" />
-    <EmbeddedResource Include="SqlScripts\0003-AlterTableVehicleMakeAndModel.sql" />
     <EmbeddedResource Include="SqlScripts\0004-SeedDataInTables.sql" />
     <EmbeddedResource Include="SqlScripts\0005-SeedDataInTable2.sql" />
     <EmbeddedResource Include="SqlScripts\0006-DropVehicleModelTable.sql" />
@@ -42,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
     <PackageReference Include="dbup-postgresql" Version="5.0.40" />
   </ItemGroup>
 

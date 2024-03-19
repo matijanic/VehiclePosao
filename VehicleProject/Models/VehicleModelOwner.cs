@@ -16,6 +16,12 @@ namespace VehicleProject.Models
 
         public DateTime DateUpdated { get; set; }
 
+        public decimal Price { get; set; }
+
+        public bool IsActive { get; set; }
+
+
+
 
 
     }
